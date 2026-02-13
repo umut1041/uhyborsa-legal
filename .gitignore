@@ -1,0 +1,29 @@
+# Gizli bilgiler - asla commit etmeyin
+.env
+.env.local
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+.venv/
+*.egg-info/
+.eggs/
+
+# Geçici / bot çıktıları
+temp/
+*.log
+stats.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Windows
+Thumbs.db
+Desktop.ini
