@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TikTok ile giriş – UHY Borsa Content</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 3rem auto; padding: 1.5rem; text-align: center; }
+    h1 { font-size: 1.35rem; }
+    p { color: #555; margin: 1rem 0; }
+    .btn { display: inline-block; background: #000; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 1rem 0; }
+    .btn:hover { background: #333; }
+    .note { font-size: 0.9rem; color: #666; margin-top: 2rem; }
+    a { color: #0066cc; }
+  </style>
+</head>
+<body>
+  <h1>TikTok ile giriş</h1>
+  <p>UHY Borsa Content uygulamasını @uhyborsa hesabınızla yetkilendirin. Yetkilendirme sonrası callback sayfasına yönlendirileceksiniz.</p>
+  <a href="#" id="tiktok-login" class="btn">TikTok ile giriş yap</a>
+  <p class="note"><a href="index.html">← Ana sayfa</a></p>
+  <script>
+    (function() {
+      var clientKey = 'aw1jzjbfhjncsug6';
+      var redirectUri = 'https://umut1041.github.io/uhyborsa-legal/callback.html';
+      var scope = 'user.info.basic,video.publish,video.upload';
+      var state = 'uhyborsa_' + Math.random().toString(36).slice(2, 12);
+      var url = 'https://www.tiktok.com/v2/auth/authorize/' +
+        '?client_key=' + encodeURIComponent(clientKey) +
+        '&scope=' + encodeURIComponent(scope) +
+        '&response_type=code' +
+        '&redirect_uri=' + encodeURIComponent(redirectUri) +
+        '&state=' + encodeURIComponent(state);
+      document.getElementById('tiktok-login').href = url;
+    })();
+  </script>
+</body>
+</html>

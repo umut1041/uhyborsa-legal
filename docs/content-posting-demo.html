@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content Posting API – UHY Borsa Content</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #333; }
+    h1 { font-size: 1.35rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    p, li { margin: 0.5rem 0; }
+    .flow { background: #f5f5f5; padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+    .step { margin: 0.5rem 0; padding-left: 1rem; border-left: 3px solid #0066cc; }
+    a { color: #0066cc; }
+  </style>
+</head>
+<body>
+  <h1>Content Posting API – Entegrasyon</h1>
+  <p>Bu uygulama, TikTok Content Posting API ile günlük hisse analizi görsellerini <strong>@uhyborsa</strong> hesabına otomatik paylaşır.</p>
+
+  <h2>Akış (end-to-end)</h2>
+  <div class="flow">
+    <div class="step"><strong>1.</strong> Zamanlayıcı günde 2 kez çalışır (örn. 08:00 ve 12:00).</div>
+    <div class="step"><strong>2.</strong> Telegram botundan günün 2 hissesi için analiz görseli + YZ özeti alınır.</div>
+    <div class="step"><strong>3.</strong> Görsel doğrulanmış URL’de (bu site veya CDN) yayınlanır.</div>
+    <div class="step"><strong>4.</strong> TikTok Content Posting API (<code>POST /v2/post/publish/content/init/</code>) ile <strong>PHOTO</strong> post oluşturulur; <strong>Direct Post</strong> ile doğrudan @uhyborsa hesabına yayınlanır.</div>
+    <div class="step"><strong>5.</strong> Kullanıcı TikTok uygulamasında paylaşımı görür.</div>
+  </div>
+
+  <h2>Kullanılan scope</h2>
+  <ul>
+    <li><strong>video.publish</strong> – İçeriğin doğrudan profil sayfasına yayınlanması için kullanılır.</li>
+  </ul>
+
+  <p><a href="index.html">← Ana sayfa</a> · <a href="login.html">TikTok ile giriş</a></p>
+</body>
+</html>
