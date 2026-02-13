@@ -21,7 +21,8 @@
   <p class="note"><a href="index.html">← Ana sayfa</a></p>
   <script>
     (function() {
-      var clientKey = 'aw1jzjbfhjncsug6';
+      var params = new URLSearchParams(window.location.search);
+      var clientKey = params.get('client_key') || 'aw1jzjbfhjncsug6';
       var redirectUri = 'https://umut1041.github.io/uhyborsa-legal/callback.html';
       var scope = 'user.info.basic,video.publish,video.upload';
       var state = 'uhyborsa_' + Math.random().toString(36).slice(2, 12);
@@ -34,5 +35,6 @@
       document.getElementById('tiktok-login').href = url;
     })();
   </script>
+  <p class="note" style="margin-top: 1rem; font-size: 0.85rem;">Client key hatası alırsanız: TikTok Developer Portal → Uygulamanız → Credentials bölümündeki <strong>Client key</strong> değerini kopyalayıp bu sayfaya <code>?client_key=KOPYALADIGINIZ_KEY</code> ekleyerek girin (örn. <code>login.html?client_key=xxx</code>).</p>
 </body>
 </html>
